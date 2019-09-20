@@ -17,7 +17,10 @@ customer to create & destroy instances in minutes and even scheduling or listeni
 to trigger. Later to be learned. Vertically, it can upgrade each instance CPU
 or memory quantity.
 
-TODO: Network and 
+VPC enable network configuration among the VPC instances and to the external
+network.
+
+TODO: Network and security
 
 ## Elastic Cloud Compute (EC2)
 Elastic compute is server resource, much like processor and memory package.
@@ -29,6 +32,15 @@ EBS is persistent storage resource, physically SSD and harddrive. It is scalable
 on the fly, may be increased in size or performance (e.g. switching to SSD).
 To connect with EC2, must be under the same availability zone (AZ), like `as-southeast-1b`.
 
-## Static Storage Service (S3)
+## Simple Storage Service (S3)
 S3 is a public-facing storage that host static files. It highly use cache
 and duplication, empowered by Edge Locations to be accessible with low latency.
+
+## Elastic Load Balancer (ELB)
+Provide two kind of load balancer: classic and application. Application LB
+has all classic has with additional features, such as health check, log refinement,
+CloudWatch metric, additional supported protocol. We focused on Application LB.
+
+Redirection is configured using domain, port, URL path, IP address, etc.
+The balancing happened when the health check (of specific URL we registered)
+return non HTTP 200.
